@@ -4,7 +4,7 @@ on:
     branches: [ 'develop', 'release-*' ]
 jobs:
   devops:
-    name: Test - Unit & Integration & SonarCloud Scan & Slack WebHook
+    name: Test - Unit & Integration & SonarCloud Scan
     runs-on: ubuntu-latest # macos-latest macos-11 windows-2019 ubuntu-20.04
     steps:
       - uses: actions/checkout@v2
