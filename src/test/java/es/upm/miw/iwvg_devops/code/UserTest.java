@@ -74,7 +74,7 @@ class UserTest {
 
     @Test
     void testToString() {
-        String expectedToString = "User{id='1', name='Manuel', familyName='Calvo', fractions=[1/2]}";
+        String expectedToString = "User{id='1', name='Manuel', familyName='Calvo', fractions=[Fraction{numerator=1, denominator=2}]}";
         assertEquals(expectedToString, user.toString());
     }
 }
