@@ -69,7 +69,7 @@ class UserTest {
 
     @Test
     void testInitials() {
-        assertEquals("M.", user.initials());
+        assertEquals("M.C.", user.initials());
     }
 
     @Test
