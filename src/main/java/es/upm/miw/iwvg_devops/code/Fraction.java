@@ -29,9 +29,6 @@ public class Fraction {
     private int denominator;
 
     public Fraction(int numerator, int denominator) {
-        // Jesús, si pongo este assert, me falla su UsersDatabase al hacer los test de Searches
-        // assert denominator != 0;
-
         this.numerator = numerator;
         this.denominator = denominator;
     }
@@ -53,8 +50,6 @@ public class Fraction {
     }
 
     public void setDenominator(int denominator) {
-        assert denominator != 0;
-
         this.denominator = denominator;
     }
 
@@ -67,8 +62,6 @@ public class Fraction {
     public boolean isImproper() { return numerator >= denominator; }
 
     public boolean isEquivalent(Fraction otherFraction) {
-        assert otherFraction != null;
-
         int extremesProduct = this.numerator * otherFraction.denominator;
         int meansProduct = this.denominator * otherFraction.numerator;
 
@@ -76,10 +69,6 @@ public class Fraction {
     }
 
     public Fraction add(Fraction otherFraction) {
-        assert otherFraction != null;
-        assert this.denominator != 0;
-        assert otherFraction.denominator != 0;
-
         int newNumerator = this.numerator * otherFraction.denominator + otherFraction.numerator * this.denominator;
         int newDenominator = this.denominator * otherFraction.denominator;
 
@@ -87,10 +76,6 @@ public class Fraction {
     }
 
     public Fraction multiply(Fraction otherFraction) {
-        assert otherFraction != null;
-        assert this.denominator != 0;
-        assert otherFraction.denominator != 0;
-
         int newNumerator = this.numerator * otherFraction.numerator;
         int newDenominator = this.denominator * otherFraction.denominator;
 
@@ -98,10 +83,6 @@ public class Fraction {
     }
 
     public Fraction divide(Fraction otherFraction) {
-        assert otherFraction != null;
-        assert this.denominator != 0;
-        assert otherFraction.numerator != 0;
-
         int newNumerator = this.numerator * otherFraction.denominator;
         int newDenominator = this.denominator * otherFraction.numerator;
 
