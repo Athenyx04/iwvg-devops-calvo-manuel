@@ -57,9 +57,9 @@ public class Fraction {
         return (double) numerator / denominator;
     }
 
-    public boolean isProper() { return numerator < denominator; }
+    public boolean isProper() { return Math.abs(numerator) < Math.abs(denominator); }
 
-    public boolean isImproper() { return numerator >= denominator; }
+    public boolean isImproper() { return Math.abs(numerator) >= Math.abs(denominator); }
 
     public boolean isEquivalent(Fraction otherFraction) {
         int extremesProduct = this.numerator * otherFraction.denominator;
