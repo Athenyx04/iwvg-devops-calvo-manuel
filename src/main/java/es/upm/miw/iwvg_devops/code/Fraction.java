@@ -29,6 +29,8 @@ public class Fraction {
     private int denominator;
 
     public Fraction(int numerator, int denominator) {
+        assert denominator != 0;
+
         this.numerator = numerator;
         this.denominator = denominator;
     }
@@ -50,11 +52,54 @@ public class Fraction {
     }
 
     public void setDenominator(int denominator) {
+        assert denominator != 0;
+
         this.denominator = denominator;
     }
 
     public double decimal() {
         return (double) numerator / denominator;
+    }
+
+    public boolean isProper() { return numerator < denominator; }
+
+    public boolean isImproper() { return numerator >= denominator; }
+
+    public boolean isEquivalent(Fraction otherFraction) {
+        assert otherFraction != null;
+
+        int extremesProduct = this.numerator * otherFraction.denominator;
+        int meansProduct = this.denominator * otherFraction.numerator;
+
+        return extremesProduct == meansProduct;
+    }
+
+    public Fraction add(Fraction otherFraction) {
+        assert otherFraction != null;
+
+        int newNumerator = this.numerator * otherFraction.denominator + otherFraction.numerator * this.denominator;
+        int newDenominator = this.denominator * otherFraction.denominator;
+
+        return new Fraction(newNumerator, newDenominator);
+    }
+
+    public Fraction multiply(Fraction otherFraction) {
+        assert otherFraction != null;
+
+        int newNumerator = this.numerator * otherFraction.numerator;
+        int newDenominator = this.denominator * otherFraction.denominator;
+
+        return new Fraction(newNumerator, newDenominator);
+    }
+
+    public Fraction divide(Fraction otherFraction) {
+        assert otherFraction != null;
+        assert otherFraction.numerator != 0;
+
+        int newNumerator = this.numerator * otherFraction.denominator;
+        int newDenominator = this.denominator * otherFraction.numerator;
+
+        return new Fraction(newNumerator, newDenominator);
     }
 
     @Override
