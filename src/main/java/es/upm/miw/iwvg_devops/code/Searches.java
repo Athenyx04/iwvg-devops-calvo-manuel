@@ -9,7 +9,7 @@ public class Searches {
     public Stream<String> findUserFamilyNameByAllNegativeSignFractionDistinct() {
         return new UsersDatabase().findAll()
                 .filter(user -> user.getFractions().stream()
-                        .anyMatch(fraction -> fraction.getNumerator() < 0 || fraction.getDenominator() < 0))
+                        .allMatch(fraction -> fraction.getNumerator() < 0 || fraction.getDenominator() < 0))
                 .map(User::getFamilyName)
                 .distinct();
     }
