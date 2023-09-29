@@ -27,7 +27,7 @@ public class Searches {
                 .flatMap(user -> user.getFractions().stream()
                         .filter(Objects::nonNull))
                 .reduce((Fraction::add))
-                .orElse(new Fraction());
+                .orElse(new Fraction(1, 1));
     }
 
     public Stream<String> findUserIdBySomeProperFraction() {
