@@ -27,4 +27,12 @@ class SearchesTest {
                 new Searches().findFractionDivisionByUserId("2").toString()
         );
     }
+
+    @Test
+    void testFindFractionAdditionByUserId() {
+        assertEquals(
+                new Fraction(16,-8).toString(),
+                new Searches().findFractionAdditionByUserId("4").toString()
+        );
+    }
 }

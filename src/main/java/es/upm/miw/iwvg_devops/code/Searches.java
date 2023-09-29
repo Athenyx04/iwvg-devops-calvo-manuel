@@ -20,4 +20,13 @@ public class Searches {
                 .reduce((Fraction::divide))
                 .orElse(new Fraction());
     }
+
+    public Fraction findFractionAdditionByUserId(String userId) {
+        return new UsersDatabase().findAll()
+                .filter(user -> userId.equals(user.getId()))
+                .flatMap(user -> user.getFractions().stream()
+                        .filter(Objects::nonNull))
+                .reduce((Fraction::add))
+                .orElse(new Fraction());
+    }
 }
