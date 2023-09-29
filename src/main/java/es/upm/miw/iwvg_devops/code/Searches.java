@@ -29,4 +29,11 @@ public class Searches {
                 .reduce((Fraction::add))
                 .orElse(new Fraction());
     }
+
+    public Stream<String> findUserIdBySomeProperFraction() {
+        return new UsersDatabase().findAll()
+                .filter(user -> user.getFractions().stream()
+                        .anyMatch(Fraction::isProper))
+                .map(User::getId);
+    }
 }
