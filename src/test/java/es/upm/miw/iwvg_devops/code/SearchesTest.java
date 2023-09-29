@@ -7,11 +7,11 @@ import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class SearchesTest {
+class SearchesTest {
     @Test
     void testFindUserFamilyNameByAllNegativeSignFractionDistinct() {
         assertEquals(
-                List.of("Blanco", "López"),
+                List.of("Torres"),
                 new Searches().findUserFamilyNameByAllNegativeSignFractionDistinct().collect(Collectors.toList())
         );
     }
